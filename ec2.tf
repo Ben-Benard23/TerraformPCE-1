@@ -9,5 +9,6 @@ resource "aws_instance" "Ben" {
             systemctl enable httpd 
             EOF
   tags          = { Name = "PCE-terraform" }
+  count = 2
 
 }
