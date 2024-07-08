@@ -9,7 +9,8 @@ resource "aws_instance" "Ben" {
             systemctl enable httpd 
             EOF
   tags          = { Name = "PCE-terraform" }
-  count = 2
+  count         = 2
+  associate_public_ip_address = true
 
 }
 
@@ -39,3 +40,4 @@ resource "aws_iam_instance_profile" "admin_profile" {
   name = "admin_profile"
   role = aws_iam_role.admin_role.name
 }
+
