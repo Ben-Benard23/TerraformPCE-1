@@ -92,11 +92,11 @@ resource "aws_route_table_association" "public_rt-2_assoc" {
 
 # Create a NAT Gateway (optional, for private subnet internet access)
 resource "aws_eip" "nat_eip-1" {
-  vpc = true
+  vpc = false
 }
 
 resource "aws_eip" "nat_eip-2" {
-  vpc = true
+  vpc = false
 }
 
 resource "aws_nat_gateway" "nat_gw-1" {
